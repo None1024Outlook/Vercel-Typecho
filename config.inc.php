@@ -34,14 +34,14 @@ require_once 'Typecho/Common.php';
 Typecho_Common::init();
 
 /** 定义数据库参数 */
-$db = new Typecho_Db($_ENV["ADAPTER_NAME"], 'typecho_');
+$db = new Typecho_Db('Pdo_Pgsql', 'postgres');
 $db->addServer(array (
-  'host' => $_ENV["POSTGRES_HOST"],
-  'user' => $_ENV["PGUSER"],
-  'password' => $_ENV["PGPASSWORD"],
+  'host' => '154.9.255.81',
+  'user' => 'postgres',
+  'password' => 'wasd1029wasd',
   'charset' => 'utf8mb4',
-  'port' => $_ENV["PORT"],
-  'database' => $_ENV["PGDATABASE"],
+  'port' => '5432',
+  'database' => 'typecho',
   'engine' => 'MyISAM',
 ), Typecho_Db::READ | Typecho_Db::WRITE);
 Typecho_Db::set($db);
